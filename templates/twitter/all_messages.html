@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<div class="contact_message_split">
+		<div class="contact_bar">
+			{% for contact in contacts %}
+			<a href="{{ url_for('user_details', recip_id=contact.id) }}"><div class="contact_bar_option">{{ contact.first_name }}</div></a>
+			{% endfor %}
+		</div>
+		<div class="get_started">
+			Click on a name to open a chat.
+			{% if current_user.grandparent == 0 %}
+			<div class="nav_space"></div>
+			<a href="{{ url_for('manage')}}"><div class="manage_grandparents_button">manage grandparents</div></a>
+			{% endif %}
+		</div>
+	</div>
+	<div class="messageBarContainer">
+	</div>
+		
+	</div>
+{% endblock %}

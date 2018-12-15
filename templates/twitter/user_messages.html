@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block header %}
+<div class="bigTitle">{% block title %}How do you want to feel?{% endblock %}</div>
+{% endblock %}
+{% block content %}
+	<div class="moodBox">
+		{% for key, value in moods.items() %}
+			
+				<a href="{{ url_for('mood_details', id=key)}}"><div class="moodItem">{{ value }}</div></a>
+			
+		{% endfor %}
+	</div>
+	
+{% endblock %}
+
+{{current_user.user_name}}

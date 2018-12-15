@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+    <head>
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdn.socket.io/socket.io-1.0.0.js"></script>
+        <script type=text/javascript src="{{ url_for('static', filename='sockets.js')}}"></script>
+    </head>
+    <body style="background-image:linear-gradient(to right, rgb(100, 0, 250), rgb(50, 0, 255)); margin: 0; height: 100%; overflow: hidden">
+        {% set gp_gc = "gp" %}
+        <div class="{{gp_gc}}">
+            <div class="nav_wrapper">
+                <div class="nav">
+                    <div>
+                        <a class="navItemLeft" href="{{url_for('landing')}}">grandchat</a>
+                    </div>
+                </div>
+                <div class="nav_underline"></div>
+            </div>
+            <div class="nav_space"></div>
+            <div class="grandparent_info_container">
+                <div class="landing_title">Welcome!</div>
+                <div class="info_subtitle">If you don't have an account, ask a grandchild to make one for you.</div>
+                <div class="info_subtitle_small">Once your grandchild gives you your <i>username</i> and <i>password</i>, click below to login.</div>
+                <div class="empty_space"></div>
+                <a href='{{ url_for('login', grandparent='1') }}'><button type=submit value=Login>login</button></a>
+            </div> 
+        </div>
+    </body>
+</html>

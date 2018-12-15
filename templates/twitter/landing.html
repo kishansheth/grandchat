@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+    <head>
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdn.socket.io/socket.io-1.0.0.js"></script>
+        <script type=text/javascript src="{{ url_for('static', filename='sockets.js')}}"></script>
+    </head>
+    <body style="background-image:linear-gradient(to right, rgb(100, 0, 250), rgb(50, 0, 255)); margin: 0; height: 100%; overflow: hidden">
+        {% set gp_gc = 'gc' %}
+        {% if current_user.grandparent %}
+            {% set gp_gc = "gp" %}
+        {% else %}
+            {% set gp_gc = "gc" %}
+        {% endif %}
+        <div class="{{gp_gc}}">
+            <div class="nav_wrapper">
+                <div class="nav">
+                    <div>
+                        <a class="navItemLeft" href="{{url_for('landing')}}">grandchat</a>
+                    </div>
+                </div>
+                <div class="nav_underline"></div>
+            </div>
+            <div class="empty_space"></div>
+            <div class="large_container">
+                <div class="main_landing_title">grandchat</div>
+                <div class="landing_subtitle">Chatting between grandparents and grandchildren has never been easier.</div>
+                <div class="landing_body">I am a: </div>
+                <div class="gp_or_gc_container">
+                    <a href="{{ url_for('login', grandparent='1') }}"><div class="gp_or_gc_option">grandparent</div></a>
+                    <a href="{{ url_for('login', grandparent='0') }}"><div class="gp_or_gc_option">grandchild</div></a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

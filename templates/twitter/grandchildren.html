@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block header %}
+<div class="bigTitle">{% block title %}Your Grandchildren{% endblock %}</div>
+{% endblock %}
+{% block content %}
+	<div class="grandchildContainer">
+		{% for grandchild in grandchildren %}
+		    <a href="{{ url_for('user_details', id=grandchild.id)}}"><div class="grandchild">{{grandchild.name}}</div></a>
+		{% endfor %}
+	</div>
+{% endblock %}

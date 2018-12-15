@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block content %}
+	<div class="contact_message_split">
+		<div class="contact_bar">
+			{% for contact in contacts %}
+				{% if contact.id == recipient.id %}
+				<a href="{{ url_for('user_details', recip_id=contact.id) }}"><div class="contact_bar_option_selected">{{ contact.first_name }}</div></a>
+				{% else %}
+				<a href="{{ url_for('user_details', recip_id=contact.id) }}"><div class="contact_bar_option">{{ contact.first_name }}</div></a>
+				{% endif %}
+			{% endfor %}
+		</div>
+		<div class="messages_container">
+			<div class="chat_details_container">
+				<img class="chat_details_profile" src="{{recipient.profile_picture}}"><div class="chat_details_name">{{recipient.first_name + " " + recipient.last_name}}</div>
+			</div>
+			<div class="contact_details_space"></div>
+			<div id="messages">
+				{% for message in messages %}
+				<div class="message_container">
+					{% if message.sender == current_user.id %}
+					<div class="sender">
+						<img class="chat_profile" src='{{ current_user.profile_picture }}'>
+						<div class="message">{{message.body}}</div>
+					</div>
+					{% else %}
+					<div class="recipient">
+						<img class="chat_profile" src='{{ recipient.profile_picture }}'>
+						<div class="message">{{message.body_trans}}</div>
+					</div>
+					{% endif %}
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+	<div class="messageBarContainer">
+		<div class="message_bar_inner">
+			{% if current_user.grandparent %}
+			<input type="text" class="messageBar" id="myMessage" placeholder="Type Message to {{recipient.first_name}}...">
+			{% else %}
+			<input type="text" class="messageBar" id="myMessage" placeholder="Message to {{recipient.first_name}}...">
+			{% endif %}
+			<script type="text/javascript">
+				var recip_id = '{{recipient.id}}';
+				var cur_user_id = '{{current_user.id}}';
+				var recip_name = '{{recipient.first_name}}';
+				var cur_user_name = '{{current_user.first_name}}';
+				var recip_photo = '{{recipient.profile_picture}}';
+				var cur_user_photo = '{{current_user.profile_picture}}';
+			</script>
+			<script type=text/javascript src="{{ url_for('static', filename='sockets.js')}}"></script>
+			<img id ="micButton" onclick="startDictation()" src="{{url_for('static', filename='buttons/record_off.svg')}}" style="height: 100%; margin-left: 40px; margin-right: 40px"/>
+			<button id="sendButton">Send</button>
+		</div>
+	</div>
+{% endblock %}
+

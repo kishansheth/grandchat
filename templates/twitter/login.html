@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+    <head>
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdn.socket.io/socket.io-1.0.0.js"></script>
+        <script type=text/javascript src="{{ url_for('static', filename='sockets.js')}}"></script>
+    </head>
+    <body style="background-image:linear-gradient(to right, rgb(100, 0, 250), rgb(50, 0, 255)); margin: 0; height: 100%; overflow: hidden">
+        {% set gp_gc = 'gc' %}
+        {% if is_grandparent=='1' %}
+            {% set gp_gc = "gp" %}
+        {% else %}
+            {% set gp_gc = "gc" %}
+        {% endif %}
+        <div class="{{gp_gc}}">
+            <div class="nav_wrapper">
+                <div class="nav">
+                    <div>
+                        <a class="navItemLeft" href="{{url_for('landing')}}">grandchat</a>
+                    </div>
+                </div>
+                <div class="nav_underline"></div>
+            </div>
+            <div class="nav_space"></div>
+            <div class="split_container">
+                <div class="login_container">
+                    <div class="landing_title">login</div>
+                    {% from "twitter/_formhelpers.html" import render_field %}
+                    <form method=post>
+                    <dl>
+                        {{ render_field(form.username, class='login_input') }}
+                        {{ render_field(form.password, class='login_input') }}
+                    </dl>
+                    <button type=submit value=Login>login</button>
+                    </form>
+                </div>
+                <div class="register_container">
+                    {% if gp_gc == "gp" %}
+                        <a href="{{url_for('grandparent_info')}}"><div class="register_button">I'm new here!</div></a>
+                    {% else %}
+                        <div class="landing_title">new user</div>    
+                        <a href="{{url_for('register_grandchild')}}"><div class="register_button">register</div></a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

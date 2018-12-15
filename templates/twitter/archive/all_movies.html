@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<div class="bigTitle">
+		{% block title %}All Movies{% endblock %}
+</div>
+<a class="vote" href="{{ url_for('create')}}">Create New</a>
+{% endblock %}
+
+{% block content %}
+	
+		<article class="post">
+			<header class="movieBox">
+				{% for movie in movies %}
+				<div class="movieItem">
+					<a href="{{ url_for('movie_details', id=movie.movie_id)}}"><div class="movieTitle">{{ movie.movie_name }}</div></a>
+					<img src="{{movie.movie_img}}">
+					<a class="action" href="{{ url_for('update', id=movie.movie_id)}}">
+						<div class="vote2">
+							Cast a Vote
+						</div>
+					</a>
+				</div>
+				{% endfor %}
+			</header>
+		</article>
+
+{% endblock %}

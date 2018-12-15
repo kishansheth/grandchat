@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    {% block title %}
+    <div class="smallTitle">
+        How others felt about:
+        <div class="mediumTitle">
+            {{ movie.movie_name }}
+        </div>
+    </div>
+    {% endblock %}
+</div>
+{% endblock %}
+
+{% block content %}
+    <article>
+        <header>
+            <div class="movieInfo">
+                <h4>{{ movie.total_updates }} people have voted on this movie.</h4>
+                <a class="action" href="{{ url_for('update', id=movie.movie_id)}}">
+                    <div class="vote">
+                        Cast a Vote
+                    </div>
+                </a>
+                <div>
+                    <img src="{{movie.movie_img}}" style="height:600px;"><br>
+                    <div class="scoreBox">
+                        <div class="scoreItem">
+                            content: <div class="score">{{ movie.score_content }}</div>
+                        </div>
+                        <div class="scoreItem">
+                                sad: <div class="score">{{ movie.score_sad }}</div>
+                        </div>
+                        <div class="scoreItem">
+                                lovestruck: <div class="score">{{ movie.score_lovestruck }}</div>
+                        </div>
+                        <div class="scoreItem">
+                                terrified: <div class="score">{{ movie.score_terrified }}</div>
+                        </div>
+                        <div class="scoreItem">
+                                contemplative: <div class="score">{{ movie.score_contemplative }}</div>
+                        </div>
+                        <div class="scoreItem">
+                                nostalgic: <div class="score">{{ movie.score_nostalgic }}</div>
+                        </div>
+                        <div class="scoreItem">
+                                inspired: <div class="score">{{ movie.score_inspired }}</div>
+                        </div>
+                        <div class="scoreItem">
+                                hysterical: <div class="score">{{ movie.score_hysterical }}</div>
+                        </div>
+                    </div>    
+                    
+                </div>
+                <!-- <div>date:</div>
+                <div>rating:</div> -->
+            </div>
+        </header>
+    </article>
+{% endblock %}

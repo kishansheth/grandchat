@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<div class="bigTitle">{% block title %}You want to feel {{ mood_name }}? Try these.{% endblock %}</div>
+{% endblock %}
+
+{% block content %}
+    <article class="post">
+        <header>
+            <div style="text-align: center;">
+                <div class="movieBox">
+                    {% for movie in movies %}
+                        <div class="movieItem">
+                            <a href="{{ url_for('movie_details', id=movie.movie_id)}}">
+                                <div class="movieTitle">
+                                        {{ movie.movie_name }}
+                                </div>
+                            </a>
+                            <img src="{{ movie.movie_img }}">
+                            <div class="score">
+                                <div class="scoreLabel">
+                                    {{ mood_name }} score: 
+                                </div>
+                                {% if mood_name=="content" %}
+                                    {{ movie.score_content }}
+                                {% endif %}
+                                {% if mood_name=="sad" %}
+                                    {{ movie.score_sad }}
+                                {% endif %}
+                                {% if mood_name=="lovestruck" %}
+                                    {{ movie.score_lovestruck }}
+                                {% endif %}
+                                {% if mood_name=="terrified" %}
+                                    {{ movie.score_terrified }}
+                                {% endif %}
+                                {% if mood_name=="contemplative" %}
+                                    {{ movie.score_contemplative }}
+                                {% endif %}
+                                {% if mood_name=="nostalgic" %}
+                                    {{ movie.score_nostalgic }}
+                                {% endif %}
+                                {% if mood_name=="inspired" %}
+                                    {{ movie.score_inspired }}
+                                {% endif %}
+                                {% if mood_name=="hysterical" %}
+                                    {{ movie.score_hysterical }}
+                                {% endif %}
+                            </div>
+                        </div>
+                        
+                    {% endfor %}
+                </div>
+                <!-- <div>date:</div>
+                <div>rating:</div> -->
+            </div>
+        </header>
+    </article>
+{% endblock %}

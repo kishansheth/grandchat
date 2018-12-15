@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+    <head>
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdn.socket.io/socket.io-1.0.0.js"></script>
+        <script type=text/javascript src="{{ url_for('static', filename='sockets.js')}}"></script>
+    </head>
+    <body style="background-image:linear-gradient(to right, rgb(100, 0, 250), rgb(50, 0, 255)); margin: 0; height: 100%; overflow: hidden; color: white;">
+        {% set gp_gc = 'gc' %}
+        <div class="{{gp_gc}}">
+            <div class="nav_wrapper">
+                <div class="nav">
+                    <div>
+                        <a class="navItemLeft" href="{{url_for('landing')}}">grandchat</a>
+                    </div>
+                </div>
+                <div class="nav_underline"></div>
+            </div>
+            <div class="nav_space"></div>
+            {% if gp_registration %}
+            <div class="register_title">add a grandparent</div>
+            {% else %}
+            <div class="register_title">register</div>
+            {% endif %}
+            <form method="POST" enctype="multipart/form-data">
+                <dl>
+                <div class="register_split">
+                    <div class="login_container">
+                        {% if gp_registration %}
+                        <div class="register_subtitle">Step 1: Enter your grandparent's basic info.</div>
+                        {% else %}
+                        <div class="register_subtitle">Step 1: Enter your basic info.</div>
+                        {% endif %}
+                        {% from "twitter/_formhelpers.html" import render_field %}
+
+                            {{ render_field(form.first_name) }}
+                            {{ render_field(form.last_name) }}
+                            {{ render_field(form.username) }}
+                            {{ render_field(form.password) }}
+                            {{ render_field(form.confirm) }}
+                            {% if gp_registration %}
+                            <div class="register_subtitle2">Select the language your grandparent prefer to speak.</div>
+                            {% else %}
+                            <div class="register_subtitle2">Select the language you prefer to speak.</div>
+                            {% endif %}
+                            {{ render_field(form.spoken_language) }}
+                    </div>
+                    <div class="register_container">
+                        <div class="register_subtitle">Step 2: Add a profile photo.</div>
+                        {{ render_field(form.profile) }}
+                    </div>
+                </div>
+                <div class="nav_space"></div>
+                {% if gp_registration %}
+                <button class="register_button" type=submit value=Login>add grandparent</button>
+                {% else %}
+                <button class="register_button" type=submit value=Login>Step 3: Add your grandparents.</button>
+                {% endif %}
+               
+                </dl>
+            </form>
+        </div>
+    </body>
+</html>

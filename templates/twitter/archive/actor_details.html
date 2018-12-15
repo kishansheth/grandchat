@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1>{% block title %}Actor{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <article class="post">
+        <header>
+            <div>
+                <h2>{{ actor.actor_name }}</h2>
+                <div>
+                    {% for movie in actor.movie_roles %}
+                        <a href="{{ url_for('movie_details', id=movie.movie_id)}}"><h4>{{ movie.movie_name }}</h4></a>
+                        <br>
+                    {% endfor %}
+                </div>
+                <!-- <div>date:</div>
+                <div>rating:</div> -->
+            </div>
+        </header>
+    </article>
+{% endblock %}

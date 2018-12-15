@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}How you felt about: "{{ movie.movie_name }}"{% endblock %}</h1>
+  <br>
+  <img src="{{movie.movie_img}}" style="height:300px;">
+{% endblock %}
+
+{% block content %}
+<form method="post">
+
+    <label for="content">Content</label>
+    <input type="range" name="content" id="contentInputId" value="{{ request.form['content']}}" min="0" max="10" oninput="contentOutputId.value = contentInputId.value" style="width: 400px">
+    <output name="contentOutputName" id="contentOutputId">5</output>
+
+    <br><br>
+
+    <label for="sad">Sad</label>
+    <input type="range" name="sad" id="sadInputId" value="{{ request.form['sad']}}" min="0" max="10" oninput="sadOutputId.value = sadInputId.value" style="width: 400px">
+    <output name="sadOutputName" id="sadOutputId">5</output>
+
+    <br><br>
+
+    <label for="lovestruck">Lovestruck</label>
+    <input type="range" name="lovestruck" id="lovestruckInputId" value="{{ request.form['lovestruck']}}" min="0" max="10" oninput="lovestruckOutputId.value = lovestruckInputId.value" style="width: 400px">
+    <output name="lovestruckOutputName" id="lovestruckOutputId">5</output>
+
+    <br><br>
+
+    <label for="terrified">Terrified</label>
+    <input type="range" name="terrified" id="terrifiedInputId" value="{{ request.form['terrified']}}" min="0" max="10" oninput="terrifiedOutputId.value = terrifiedInputId.value" style="width: 400px">
+    <output name="terrifiedOutputName" id="terrifiedOutputId">5</output>
+
+    <br><br>
+
+    <label for="contemplative">Contemplative</label>
+    <input type="range" name="contemplative" id="contemplativeInputId" value="{{ request.form['contemplative']}}" min="0" max="10" oninput="contemplativeOutputId.value = contemplativeInputId.value" style="width: 400px">
+    <output name="contemplativeOutputName" id="contemplativeOutputId">5</output>
+    
+    <br><br>
+
+    <label for="nostalgic">Nostalgic</label>
+    <input type="range" name="nostalgic" id="nostalgicInputId" value="{{ request.form['nostalgic']}}" min="0" max="10" oninput="nostalgicOutputId.value = nostalgicInputId.value" style="width: 400px">
+    <output name="nostalgicOutputName" id="nostalgicOutputId">5</output>
+
+    <br><br>
+
+    <label for="inspired">Inspired</label>
+    <input type="range" name="inspired" id="inspiredInputId" value="{{ request.form['inspired']}}" min="0" max="10" oninput="inspiredOutputId.value = inspiredInputId.value" style="width: 400px">
+    <output name="inspiredOutputName" id="inspiredOutputId">5</output>
+
+    <br><br>
+
+    <label for="hysterical">Hysterical</label>
+    <input type="range" name="hysterical" id="hystericalInputId" value="{{ request.form['hysterical']}}" min="0" max="10" oninput="hystericalOutputId.value = hystericalInputId.value" style="width: 400px">
+    <output name="hystericalOutputName" id="hystericalOutputId">5</output>
+
+    <br><br>
+
+    <input type="submit" value="Save">
+
+    <br><br>
+  </form>
+  <form action="{{ url_for('delete', id=id) }}" method="post">
+      <input class="danger" type="submit" value="Delete" onclick="return confirm('Are you sure?');">
+  </form>
+{% endblock %}

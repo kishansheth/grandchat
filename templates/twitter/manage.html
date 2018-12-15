@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+    <head>
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdn.socket.io/socket.io-1.0.0.js"></script>
+        <script type=text/javascript src="{{ url_for('static', filename='sockets.js')}}"></script>
+    </head>
+    <body style="background-image:linear-gradient(to right, rgb(100, 0, 250), rgb(50, 0, 255)); margin: 0; height: 100%; overflow: hidden; color: white;">
+        {% set gp_gc = 'gc' %}
+        <div class="{{gp_gc}}">
+            <div class="nav_wrapper">
+                <div class="nav">
+                    <div>
+                        <a class="navItemLeft" href="{{url_for('index')}}">grandchat</a>
+                        {% if current_user.is_authenticated %}
+                            <a class="navItemRight" href="{{url_for('logout')}}">Logout</a>  
+                            <div class="nav_profile_container"><img class="nav_profile_image" src="{{current_user.profile_picture}}"></div>
+                            <a class="navItemRight" href="">Hello, {{ current_user.first_name}}</a>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="nav_underline"></div>
+            </div>
+            <div class="nav_space"></div>
+            <div class="register_title">manage grandparents</div>
+            <div class="manage_split">
+                <div class="search_container">
+                    <div class="register_subtitle">Add existing grandparent:</div>
+                    {% from "twitter/_formhelpers.html" import render_field %}
+                    <form method=post>
+                            <dl>
+                                {{ render_field(form.search, class='login_input') }}
+                            </dl>
+                            <button type=submit value=Login>search</button>
+                            </form>
+                  
+                    {% if user_search|length > 0 %}
+                    <div class="user_box">
+                        {% for grandparent in user_search %}
+                        <a href="{{url_for('add', id=grandparent.id)}}">
+                            <div class="user_box_option">
+                                <img class="manage_profile_image" src="{{grandparent.profile_picture}}"> 
+                                <div class="manage_user_text">{{grandparent.first_name + " " + grandparent.last_name}} ({{ grandparent.username }})</div>
+                            </div>
+                        </a>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="list_container">
+                    <div class="register_subtitle">Your grandparents:</div>
+                    <div class="user_box">
+                        {% for grandparent in user_grandparents %}
+                        <div class="user_box_option">
+                            <img class="manage_profile_image" src="{{grandparent.profile_picture}}"> 
+                            <div class="manage_user_text">{{grandparent.first_name + " " + grandparent.last_name}} ({{ grandparent.username }})</div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <a href="{{url_for('register_grandparent')}}"><div class="register_button">register a new grandparent</div></a>
+                </div>
+            </div>
+            <a href="{{url_for('index')}}"><div class="register_button">go to chat</div></a>
+        </div>
+    </body>
+</html>

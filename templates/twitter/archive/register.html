@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block header %}
+<div class="bigTitle">{% block title %}Register{% endblock %}</div>
+{% endblock %}
+{% block content %}
+    {% from "twitter/_formhelpers.html" import render_field %}
+    <form method=post>
+    <dl>
+        {{ render_field(form.username) }}<br><br>
+        {{ render_field(form.password) }}<br><br>
+        {{ render_field(form.confirm) }}<br><br>
+        {{ render_field(form.grandparent) }}
+    </dl>
+    <input type=submit value=Register>
+    </form>
+	
+{% endblock %}

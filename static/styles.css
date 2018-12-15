@@ -1,0 +1,1094 @@
+@font-face {
+	font-family: "RobotoMonoThin";
+	src: url("fonts/RobotoMono-Thin.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "RobotoMonoLight";
+	src: url("fonts/RobotoMono-Light.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "RobotoMonoMedium";
+	src: url("fonts/RobotoMono-Medium.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "RobotoMonoBold";
+	src: url("fonts/RobotoMono-Bold.ttf") format("truetype");
+}
+
+::selection {
+    background-color: black;
+    color: white;
+}
+
+html, body {
+    font-family: "RobotoMonoMedium";
+    background-color:#EEEEEE;
+	height: 100%;
+	margin: 0px;
+    padding: 0px;
+    margin-bottom: 50px;
+    color: #000000;
+    text-align: center;
+
+}
+
+gradient_background {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to right, rgb(100, 0, 250), rgb(50, 0, 255));
+}
+
+form {
+    display: inline-block;
+    width: 80%;
+}
+
+button {
+    font-family: "RobotoMonoLight";
+    display: inline-block;
+    border: none;
+    border-radius: 25px;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    background: #ffffff;
+    color:rgb(0, 145, 255);
+}
+
+.manage_grandparents_button {
+    display: inline-block;
+    width: auto;
+    margin: 20px;
+    padding: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 100px;
+    border: 2px solid white;
+    text-align: center;
+    font-size: 15px;
+    border-radius: 15px;
+    font-family: "RobotoMonoLight";
+}
+
+.manage_grandparents_button:hover {
+    color: blue;
+    background-color: white;
+}
+
+button:hover {
+    color: blue;
+    background-color: white;
+}
+
+.gc .message_bar_inner button {
+    font-size: 20px;
+    background: none;
+    height: 100%;
+    margin: 0;
+    border-radius: 15px;
+    padding: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.gp .message_bar_inner button {
+    font-size: 30px;
+    background: none;
+    height: 100%;
+    margin: 0;
+    border-radius: 15px;
+    padding: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 2px solid white;
+    background: none;
+    color: white;
+}
+
+.message_bar_inner button:hover {
+    color: blue;
+    background-color: white;
+}
+
+.gc .search_container button:hover {
+    background: white;
+    color: blue;
+}
+
+.gc .search_container button {
+    font-family: "RobotoMonoLight";
+    font-size: 20px;
+    margin: 25px;
+}
+
+.gc button {
+    border: 2px solid white;
+    margin: 10px;
+    font-size: 30px;
+    background: none;
+    color: white;
+}
+
+.gp .login_container button {
+    border: 2px solid white;
+    margin: 10px;
+    font-size: 30px;
+    background: none;
+    color: white;
+}
+
+.gp .grandparent_info_container button {
+    border: 2px solid white;
+    margin: 10px;
+    font-size: 30px;
+    background: none;
+    color: white;
+}
+
+.gp .grandparent_info_container button:hover {
+    color: blue;
+    background-color: white;
+}
+
+.gc .login_container button {
+    border: 2px solid white;
+    margin: 10px;
+    font-size: 15px;
+    border-radius: 15px;
+    background: none;
+    color: white;
+}
+
+.login_container button:hover {
+    background: white;
+    color: blue;
+}
+
+.gp .register_button {
+    font-family: "RobotoMonoLight";
+    width: 40%;
+    font-size: 30px;
+    padding: 20px;
+    text-align: center;
+    margin: auto;
+    margin-top: 80px;
+    border: 2px solid white;
+    border-radius: 25px;
+}
+
+.gc .register_button {
+    display: inline-block;
+    font-family: "RobotoMonoLight";
+    font-size: 15px;
+    padding: 20px;
+    text-align: center;
+    margin: auto;
+    border: 2px solid white;
+    border-radius: 15px;
+}
+
+.register_button:hover {
+    background: white;
+    color: blue;
+}
+
+.gp .login_container input {
+    font-family: "RobotoMonoLight";
+    text-align: left;
+    display: inline-block;
+    width: auto;
+    font-size: 50px;
+    border: none;
+    border-radius: 25px;
+    padding: 2rem 4rem;
+    margin: 25px;
+    text-decoration: none;
+    background-color: rgba(0,0,0,.1);
+    color: white;
+}
+
+.gp .login_container input::placeholder {
+    font-family: "RobotoMonoLight";
+    color: rgba(255,255,255,.5);
+  }
+
+.gp .login_container input:focus {
+    border: 3px solid white;
+}
+
+.gc .login_container input {
+    font-family: "RobotoMonoLight";
+    text-align: left;
+    display: inline-block;
+    width: auto;
+    font-size: 20px;
+    border: none;
+    border-radius: 15px;
+    padding: 1rem 2rem;
+    margin: 15px;
+    text-decoration: none;
+    background-color: rgba(0,0,0,.1);
+    color: white;
+}
+
+.gc .login_container input::placeholder {
+    font-family: "RobotoMonoLight";
+    color: rgba(255,255,255,.5);
+  }
+
+.gc .login_container input:focus {
+    border: 3px solid white;
+}
+
+input {
+    display: inline-block;
+    border: none;
+    border-radius: 25px;
+    padding: 1rem 2rem;
+    margin: 0;
+    text-decoration: none;
+    background: none;
+    color:white;
+    border: 2px solid white;
+}
+
+login_input {
+    display: inline-block;
+    border: none;
+    border-radius: 25px;
+    padding: 1rem 2rem;
+    margin: 0;
+    text-decoration: none;
+    background-color: black;
+    color: black;
+}
+
+.search_container .login_input {
+    font-family: "RobotoMonoLight";
+    font-size: 30px;
+    width: 70%;
+    margin: auto;
+    border-radius: 15px;
+    background-color: rgba(0,0,0,.1);
+    color: white;
+    border: none;
+}
+
+.search_container .login_input::placeholder {
+    color: rgba(255,255,255,.5);
+  }
+
+  .search_container .login_input:focus {
+    border: 3px solid white;
+}
+
+.empty_space {
+    display: inline-block;
+    width: 100%;
+    height: 200px;
+}
+
+.gp .nav_space {
+    display: inline-block;
+    width: 100%;
+    height: 100px;
+}
+
+.gc .nav_space {
+    display: inline-block;
+    width: 100%;
+    height: 64px;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+/* CONTAINERS */
+
+.contact_message_split {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.user_box {
+    font-family: "RobotoMonoLight";
+    font-size: 20px;
+    text-align: left;
+    margin: 120px;
+    margin-top: 20px;
+    border: 2px solid white;
+    background-color: rgba(0,0,0,.1);
+    max-height: 400px;
+    overflow: scroll;
+}
+
+.list_container .user_box {
+    height: 300px;
+}
+
+.user_box_option {
+    overflow: hidden;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 15px;
+}
+
+.gp .user_box_option {
+    padding: 20px;
+    border: 2px solid white;
+    margin: 10px;
+}
+
+.user_box_option:hover {
+    color: blue;
+    background-color: white;
+}
+
+.manage_split {
+    margin: 100px;
+    margin-top: 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.search_container {
+    text-align: center;
+    color: white;
+    width: 50%;
+}
+
+.list_container {
+    color: white;
+    width: 50%;
+    border-left: 2px solid rgba(255,255,255,.2);
+}
+
+.large_container {
+    width: 100%;
+    text-align: center;
+}
+
+.split_container {
+    margin-top: 130px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.register_split {
+    margin-top: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.gc .split_container {
+    margin-top: 250px;
+}
+
+.login_container {
+    width: calc(100% / 3 * 2);
+}
+
+
+.register_container input {
+    font-family: "RobotoMonoLight";
+    text-align: left;
+    display: inline-block;
+    width: auto;
+    font-size: 20px;
+    border: none;
+    border-radius: 15px;
+    padding: 1rem 2rem;
+    margin: 15px;
+    text-decoration: none;
+    background-color: rgba(0,0,0,.1);
+    color: white;
+}
+
+.gc .register_container input::placeholder {
+    font-family: "RobotoMonoLight";
+    color: rgba(255,255,255,.5);
+  }
+
+.gc .register_container input:focus {
+    border: 3px solid white;
+}
+
+.register_container {
+    padding-top: 150px;
+    text-align: center;
+    width: calc(100% / 3 * 1);
+    border-left: 2px solid rgba(255,255,255,.2);
+}
+
+.register_split .register_container {
+    padding: 0px;
+    padding-top: 0px;
+    display: inline-block;
+    vertical-align: top;
+    padding: none;
+}
+
+/* .gc .register_container {
+    padding-top: 0px; 
+} */
+
+/* TITLES */
+
+.contact_details_space {
+    width: 100%;
+    height: 140px;
+}
+
+.gc .contact_details_space {
+    height: 80px;
+}
+
+.chat_details_container {
+    position: fixed;
+    text-align: left;
+    color: black;
+    padding: 0px;
+    font-family: "RobotoMonoLight";
+    font-size: 40px;
+    width: 100%;
+    background-color: #e9e9e9;
+}
+
+.gc .chat_details_container {
+    padding: 0px;
+    font-size: 20px;
+}
+
+.chat_details_name {
+    float: left;
+    height: 100%;
+    padding: 30px;
+}
+
+.chat_details_profile {
+    float: left;
+    height: 80px;
+    margin: 20px;
+    margin-left: 40px;
+    border-radius: 50%;
+}
+
+.gc .chat_details_name {
+    float: left;
+    height: 100%;
+    padding: 20px;
+}
+
+.gc .chat_details_profile {
+    float: left;
+    height: 45px;
+    margin: 10px;
+    margin-left: 40px;
+    border-radius: 50%;
+}
+
+.register_title {
+    color: white;
+    width: 100%;
+    text-align: left;
+    padding: 100px;
+    padding-bottom: 10px;
+    padding-top: 100px;
+    font-size: 50px;
+}
+
+.register_subtitle {
+    width: 100%;
+    margin: auto;
+    text-align: left;
+    padding: 50px;
+    padding-top: 0px;
+    font-size: 20px;
+    font-family: "RobotoMonoLight";
+    display: inline-block;
+    width: 100%;
+}
+
+.register_subtitle2 {
+    width: 40%;
+    margin: auto;
+    margin-bottom: 0px;
+    margin-top: 20px;
+    text-align: center;
+    padding: 50px;
+    padding-top: 0px;
+    font-size: 20px;
+    font-family: "RobotoMonoLight";
+    display: inline-block;
+    width: 100%;
+}
+
+.info_subtitle {
+    width: 70%;
+    text-align: center;
+    font-size: 50px;
+    padding-top: 50px;
+    font-family: "RobotoMonoLight";
+    display: inline-block;
+    color: white;
+}
+
+.info_subtitle_small {
+    width: 50%;
+    text-align: center;
+    font-size: 35px;
+    padding-top: 50px;
+    font-family: "RobotoMonoMedium";
+    display: inline-block;
+    color: white;
+}
+
+.landing_title {
+    display: inline-block;
+    color: white;
+    font-size: 70px;
+    width: 100%;
+    padding: 15px;
+    z-index: 10;
+}
+
+.main_landing_title {
+    display: inline-block;
+    color: white;
+    font-size: 70px;
+    width: 100%;
+    padding: 15px;
+    z-index: 10;
+}
+
+.gc .landing_title {
+    display: inline-block;
+    color: white;
+    font-size: 40px;
+    width: 100%;
+    padding: 15px;
+    z-index: 10;
+}
+
+.landing_subtitle {
+    font-family: "RobotoMonoLight";
+    color: white;
+    font-size: 30px;
+    padding: 10px;
+    padding-bottom: 30px;
+}
+
+.landing_body {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    font-family: "RobotoMonoMedium";
+    color: white;
+    font-size: 30px;
+    padding: 30px;
+}
+
+.messageBarContainer {
+    position: fixed;
+    padding: 50px;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    background-image: linear-gradient(to right, rgb(100, 0, 250), rgb(50, 0, 255));
+}
+
+.gc .messageBarContainer {
+    padding: 30px;
+ }
+
+.message_bar_inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: nowrap;
+    height: 100px;
+}
+
+.gc .message_bar_inner {
+    height: 50px;
+}
+
+.messageBar {
+    width: 45%;
+    padding: 30px;
+    border-radius: 15px;
+    font-family: "RobotoMonoMedium";
+    outline: none;
+    border: none;
+    color: black;
+    box-shadow: none;
+    font-size: 30px;
+    background-color: white;
+}
+
+.gc .messageBar {
+    padding: 15px;
+    padding-left: 25px;
+    font-family: "RobotoMonoMedium";
+    font-size: 20px;
+
+}
+
+.messages_container {
+    display: inline-block;
+    background-color: white;
+    width: 80%;
+    overflow: scroll;
+    height: 910px;
+}
+
+.gp .messages_container {
+    height: 790px;
+}
+
+.get_started {
+    display: inline-block;
+    font-family: "RobotoMonoLight";
+    font-size: 50px;
+    padding: 100px;
+    padding-top: 200px;
+    justify-content: center;
+    align-items: center; 
+    background-image: linear-gradient(to right, rgb(80, 0, 230), rgb(30, 0, 235));
+    width: 80%;
+    height: 800px;
+}
+
+.gc .get_started {
+    width: 85%;
+    font-size: 25px;
+}
+
+.gc .messages_container {
+    width: 85%;
+}
+
+.message_container {
+    display: inline-block;
+    grid-template-columns: 10% 90%;
+    width: 100%;
+    max-width: 97%;
+    margin: auto;
+}
+
+.message {
+    float: right;
+    text-align: right;
+    width: auto;
+    background-image: linear-gradient(to right, rgb(0, 200, 230), rgb(15, 200, 255));
+    color: white;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 25px; 
+    margin: 10px;
+}
+
+.author {
+    float: right;
+    text-align: right;
+    width: auto;
+    padding: 10px;
+    border-radius: 25px;
+    color: black;
+    margin: 10px;
+}
+
+.chat_profile {
+    float: right;
+    height: 40px;
+    margin: 10px;
+    border-radius: 50%;
+}
+
+.gp .message {
+    font-size: 30px;
+    float: right;
+    text-align: right;
+    width: auto;
+    background-image: linear-gradient(to right, rgb(0, 200, 230), rgb(15, 200, 255));
+    color: white;
+    padding: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 25px; 
+    margin: 20px;
+}
+
+.gp .author {
+    font-size: 30px;
+    float: right;
+    text-align: right;
+    width: auto;
+    padding: 20px;
+    border-radius: 25px;
+    color: black;
+    margin: 20px;
+}
+
+.gp .chat_profile {
+    float: right;
+    height: 80px;
+    margin: 20px;
+    border-radius: 50%;
+}
+
+.gp .recipient .chat_profile {
+    float: left;
+    height: 80px;
+    margin: 20px;
+    border-radius: 50%;
+}
+
+.recipient .message {
+    float: left;
+    text-align: left;
+    background-image: none;
+    background-color: #e5e5e5;
+    color: black;
+}
+
+.recipient .author {
+    float: left;
+    text-align: left;
+}
+
+.recipient .chat_profile {
+    float: left;
+    height: 40px;
+    margin: 10px;
+    border-radius: 50%;
+}
+
+.gp {
+    width: 100%;
+    height: 100%;
+}
+
+.gc {
+    width: 100%;
+    height: 100%;
+}
+
+.gc_author {
+    display: inline-block;
+    text-align: left;
+    padding: 20px;
+    width: 100%;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    background-image: linear-gradient(to right, rgb(100, 0, 250), rgb(50, 0, 255));
+    color: white;
+    margin-bottom: 10px;
+}
+
+.gp_author {
+    display: inline-block;
+    text-align: left;
+    padding: 20px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    width: 100%;
+    background-image: linear-gradient(to right, rgb(250, 0, 100), rgb(255, 0, 50));
+    color: white;
+    margin-bottom: 10px;
+}
+
+.grandparentContainer {
+    width: 30%;
+    margin: auto;
+    display: grid;
+    grid-gap: 20px;
+}
+
+.grandparent_info_container {
+    width: 100vw;
+    padding-top: 100px;
+    text-align: center;
+}
+
+.grandparent {
+    font-size: 30px;
+    padding: 10px;
+    color: black;
+    border-radius: 100px;
+    background-color: #FFFFFF;
+}
+
+.grandparent:hover {
+    background-color: rgb(50, 0, 255);
+    color: white;
+    transition: .3s;
+}
+
+.grandchildContainer {
+    width: 50%;
+    margin: auto;
+    display: grid;
+    grid-gap: 50px;
+}
+
+.grandchild {
+    font-size: 100px;
+    padding: 10px;
+    color: black;
+    border-radius: 100px;
+    background-color: #FFFFFF;
+}
+
+.grandchild:hover {
+    background-color: rgb(50, 0, 255);
+    color: white;
+    transition: .3s;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+/* BUTTONS */
+
+.gp_or_gc_container {
+    display: grid;
+    grid-template-columns: 50% 50%; 
+    text-align: center;
+    width: 50%;
+    margin: auto;
+}
+
+.gp_or_gc_option {
+    display: inline-block;
+    text-align: center;
+    border-style: solid;
+    border-color: white;
+    border-width: 1px;
+    padding: 80px;
+    padding-bottom: 80px;
+    padding-top: 80px;
+    font-size: 35px;
+    width: 50%;
+    margin: auto;
+    border-radius: 25px;
+}
+
+.gp_or_gc_option:hover {
+    background-color: white;
+    color: rgb(0, 94, 255);
+}
+
+/* NAVIGATION */
+
+.contact_bar {
+    display: block;
+    font-size: 40px;
+    height: 100%;
+    overflow: scroll;
+    width: 20%;
+    left: 0;
+    top: 106px;
+    overflow-x: hidden;
+    z-index: 100;
+}
+
+.gc .contact_bar {
+    font-size: 15px;
+    width: 15%;
+}
+
+.contact_bar_option {
+    overflow: hidden;
+    padding: 20px;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    border-bottom: 2px solid rgba(255,255,255,.3);
+}
+
+.contact_bar_option_selected {
+    overflow: hidden;
+    padding: 20px;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    border-bottom: 2px solid rgba(255,255,255,.3);
+    background-color: white;
+    color: blue;
+}
+
+.gc .contact_bar_option {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.gc .contact_bar_option_selected {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.contact_bar_option:hover {
+    color: blue;
+    background-color: white;
+}
+
+.nav_underline {
+    width: 100%;
+    height: 3px;
+    background-color: rgba(255,255,255,.2);
+    z-index: 10;
+}
+
+.nav_wrapper {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 10;
+}
+
+.nav {
+    display: inline-block;
+    background-image: linear-gradient(to right, rgb(100, 0, 250), rgb(50, 0, 255));
+    margin-top: 0px;
+    margin-bottom: 0px;
+    width: 100%;
+    text-align: left;
+    z-index: 10;
+}
+
+.gp .navItemLeft {
+    float: left;
+    padding: 30px;
+    font-size: 30px;
+    color: white;
+    text-decoration: none;
+    letter-spacing: .5px;
+}
+
+.gc .navItemLeft {
+    float: left;
+    padding: 20px;
+    font-size: 15px;
+    color: white;
+    text-decoration: none;
+    letter-spacing: .5px;
+}
+
+.gp .navItemRight {
+    float: right;
+    padding: 30px;
+    font-size: 30px;
+    color: white;
+    text-decoration: none;
+    letter-spacing: .5px;
+}
+
+.gc .navItemRight {
+    float: right;
+    padding: 20px;
+    font-size: 15px;
+    color: white;
+    text-decoration: none;
+    letter-spacing: .5px;
+}
+
+.gc .nav_profile_container {
+    padding: 10px;
+    float: right;
+    height: 100%;
+}
+
+.gc .nav_profile_image {
+    height: 35px;
+    margin: auto;
+    border-radius: 50%;
+}
+
+.gp .nav_profile_container {
+    padding: 20px;
+    float: right;
+    height: 100%;
+}
+
+.gp .nav_profile_image {
+    height: 50px;
+    margin: auto;
+    border-radius: 50%;
+}
+
+.manage_profile_image {
+    float: left;
+    height: 50px;
+    margin: 0px;
+    margin-left: 10px;
+    border-radius: 50%;
+}
+
+.manage_user_text {
+    float: left;
+    margin: 0px;
+    margin-left: 20px;
+    padding: 10px;
+}
+
+.navItemLeft:hover {
+    color: rgba(255,255,255,.7);
+    transition: .3s;
+}
+
+
+.navItemRight:hover {
+    color: rgba(255,255,255,.7);
+    transition: .3s;
+}
+
+
+.bigTitle {
+    font-size: 50px;
+    text-align: center;
+    color: black;
+    padding: 80px;
+    letter-spacing: 1px;
+}
+
+.smallTitle {
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    padding-top: 80px;
+    letter-spacing: 1px;
+}
+
+.mediumTitle {
+    font-size: 50px;
+    text-align: center;
+    color: white;
+    padding: 30px;
+    padding-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+
+
+.rainbow {
+    width: 100%;
+    min-height: 2px;
+    background-image: linear-gradient(to right, #FF0000, #FFFF00, #00FF00, #00FFFF, #0000FF)
+}
+
